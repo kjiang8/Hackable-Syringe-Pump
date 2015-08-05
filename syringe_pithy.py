@@ -4,7 +4,7 @@ import ast
 from time import sleep,time
 
 #IP address
-site = "http://25.75.171.210:9005"
+site = "http://localhost:9005"
 
 #write to serial port (expects 0 to 255)
 def awrite(val):
@@ -20,7 +20,6 @@ def syringe(direction, volume = 0.0, time = 0.0, flowrate = 0.0):
     if volume == 0.0:
         print "case 1"
         volume = float(flowrate*time*3600) #mL
-        print volume
     
     elif time == 0.0:
         print "case 2"
@@ -34,9 +33,9 @@ def syringe(direction, volume = 0.0, time = 0.0, flowrate = 0.0):
         print "need to input 2/3 of volume, time, or flowrate"
     
     if direction.lower() == 'forward':
-        direction = '2' #backward in arduino code
+        direction = '1'
     else:
-        direction = '1' #forward in arduino code
+        direction = '2' 
         
     steps = volume*800 + 400 #added 400 compensates for lag at start
     speed = str(int(steps/(time*200))) #convert 200 steps/rev, to speed in rpm
@@ -61,4 +60,6 @@ def syringe(direction, volume = 0.0, time = 0.0, flowrate = 0.0):
     sleep(time*60)
 
 
-syringe('forward', time=0.7, volume=10)
+syringe('forward', time=42/60.0, volume=10)
+
+
