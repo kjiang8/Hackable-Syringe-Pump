@@ -56,10 +56,10 @@ def syringe(direction, volume = 0.0, time = 0.0, flowrate = 0.0):
     print "steps: ", steps
     print "speed(rpm): ", speed
     
-    #awrite(string)
+    awrite(string)
     sleep(time*60)
 
 
-syringe('forward', time=42/60.0, volume=10)
+syringe('forward', time=0.7, volume=10)
 
 
