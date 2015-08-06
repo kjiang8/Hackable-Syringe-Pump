@@ -72,5 +72,5 @@ And that’s it!
 * [Lindsey Adamson](https://github.com/LindseyCAdamson)
 * [Kathryn Jiang](https://github.com/kjiang8)
 * [Dan Steingart](https://github.com/dansteingart)
-* Lindsey Epstein
+* Lindsay Epstein
 
