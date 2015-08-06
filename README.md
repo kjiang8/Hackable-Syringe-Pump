@@ -70,7 +70,7 @@ And that’s it!
 ###Special thanks to
 
 * [Lindsey Adamson](https://github.com/LindseyCAdamson)
-* [Kathryn Jiang](https://github.com/kjiang8)
+* [Jason Mulderrig](https://github.com/jasonmulderrig)
 * [Dan Steingart](https://github.com/dansteingart)
 * Lindsay Epstein
 
