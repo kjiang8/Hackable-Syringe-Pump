@@ -1,0 +1,99 @@
+###Hackable Syringe Pump Documentation:
+
+If you are considering creating a syringe pump:
+* from scratch
+* with hackability
+* and for a fraction of the cost of syringe pumps on the market
+
+then you have come to the right place! In this document, I will take you through the process of making a hackable syringe pump made from 3-D printed plastic components and controlled by an Arduino. 
+
+**Step 1:** Retrieve the correct .stl (stereolithography) files. 
+
+Go to https://www.youmagine.com/designs/syringe-pump . 
+
+Download these .stl files:
+
+* linear_actuator_v0-1.stl
+* linear_actuator_v0-2.stl
+* linear_actuator_v0-4.stl
+* linear_actuator_v0-5.stl
+* linear_actuator_v0-7.stl
+
+You do not need to download the 3.stl, 6.stl, or 8.stl files.
+
+**Step 2:** 3-D print the .stl files using the FormLabs printer. You can either use clear resin or tough resin. Make sure to cure the parts once they are printed.
+
+Print each *.stl file once, except for the file 5.stl. For that file, print 2 copies.
+
+**Step 3:** Acquire the non-3-D printed components.
+
+These include: 
+
+* Arduino Uno: Install the Arduino IDE and software here: https://www.arduino.cc/en/main/software 
+* Adafruit MotorShield v2: Need to acquire 3 2-pin terminal blocks, 2 3-pin terminal blocks, and stacking headers and solder them onto the MotorShield. Download the instructional pdf here: https://learn.adafruit.com/downloads/pdf/adafruit-motor-shield-v2-for-arduino.pdf 
+and follow the instructions for soldering those parts from page 11 to page 21. Also, you need to download software for the MotorShield, available on page 22 of the pdf above.
+* Micro-USB adaptor cable
+* 6 wires: 4 for connecting the stepper motor to the MotorShield, and 2 to power the MotorShield.
+* External power supply
+* NEMA-17 stepper motor: The model we used was the 17HS16-0284S
+
+The hardware that you will need for the assembly of the 3-D printed parts include:
+ * 5mm x 5mm shaft coupling (Quantity: 1): http://www.adafruit.com/search?q=shaft+coupler&b=1 
+* 625z ball bearing (Quantity: 2): http://www.mcmaster.com/#standard-ball-and-roller-bearings/=ydogom 
+* LM6UU linear bearing (Quantity: 2): http://www.mcmaster.com/#standard-linear-bearings/=ydoh76 
+* M3 x 10mm socket head cap screw (Quantity: 6): Must order them from McMaster-Carr or buy them from a hardware store
+* M3 x 20mm socket head cap screw (Quantity: 4): Must order them from McMaster-Carr or buy them from a hardware store
+* M3 x 40mm socket head cap screw (Quantity: 4): Must order them from McMaster-Carr or buy them from a hardware store
+* M3 hex nut (Quantity: 13): Must order them from McMaster-Carr or buy them from a hardware store
+* M5 hex nut (Quantity: 5): Acquired from the Engineering Stockroom
+* M5 threaded rod (Length: 0.2 or 0.3 meter): http://www.mcmaster.com/#standard-threaded-rods/=ydoj09 
+* 6mm A2 tool steel (Length: 0.4 meter - I had the machine shop cut the rod to the correct size): http://www.mcmaster.com/#drill-rods/=ydojg6 
+
+**Step 4:** Follow the instructions for assembling the parts together into the syringe pump. These instructions come from http://www.appropedia.org/Open-source_syringe_pump, which also has pictures associated with each step.
+
+1. Secure motor into the motor end using 4 M3 washers and 4 M3 x 20mm socket head cap screws. (You must use the M3 washers and M3 x 20mm socket head screws here) 
+2. Insert the 2 metal rods into motor end, then secure them in place with 2 M3 nuts and 2 M3 x 10mm  socket head cap screws. (My team and I used M4 nuts and M4 x 10mm socket head cap screws for this step. These were retrieved from the Engineering Stockroom)
+3. Insert threaded rod into the coupler halfway, the other half should be on the motor, secure it.
+4. Hollow out the two ends of the carriage, with a handheld drill bit or knife to make a hole in the plastic.
+5. Snap the linear bearings into place on the hollowed out ends of the carriage. Then insert an M5 nut into the nut-trap on the bottom of the carriage.
+6. Attach the base of the Plunger holder to the carriage with 2 M3 nuts and 2 M3 x 10mm socket head cap screws. (My team and I used M4 nuts and M4 x 10mm socket head cap screws for this step. These were retrieved from the Engineering Stockroom)
+7. Slide the carriage onto the threaded rod and make sure the two metal rods fit into the linear bearings.  
+8. After the carriage is midway down the threaded rod, thread two M5 nuts onto the threaded rod.
+9. Insert the two bearings into the circular slots in the idler end.
+10. Now slide the idler end onto the rods and secure it with two more M5 nuts on the end of the threaded rod. Push the two nuts already on the rod up to the idler end to secure it.
+11. Insert the syringe body into the body holders, then slide the plunger into the base of the plunger holder.
+12. Using four M3 x 40mm bolts, four M3 washers, and four M3 nuts secure the two holding pieces to the idler end of the pump. Put two nuts it the top of the holder closer to the carriage and two nuts in the bottom of the holder against the idler end. (You also must use the M3 x 40mm screws, M3 washers, and M3 nuts for this step)
+13. Insert the tab of the plunger holder on top of the plunger to secure it to the pump and prevent slipping when in use.
+
+A few notes about the physical setup of the syringe pump:
+* With an HSW norm-ject 20 mL syringe installed in the syringe pump, the pump could push out all but the last 1.3 mL of liquid. In other words, the pump left the last 1.3 mL of liquid unpushed when it maxed out of space to push with the HSW norm-ject 20 mL syringe.
+* My team and I cut the top of the two body holders just enough so the syringe could be easily removed, instead of removing 4 screws to change the syringe. 
+
+If you are planning on using the M4 screws and nuts (like my team and I did), you will have to use an M4 drill bit to widen the screw holes, a larger drill bit to widen the holes for the nuts, and an even larger drill bit to widen the holes for the screw heads. You will need an electric drill for this. Make sure to drill in a well ventilated room because plastic dust will be generated.
+
+**Step 5:** Connect the stepper motor to the Arduino Uno and to the power source.
+
+You will need a small screwdriver to connect the wires to the terminal pins.
+
+You need to connect the two left-most wires on the stepper motor to the terminal ports in either M1 or M3. Then, you need to connect the two right-most wires on the stepper motor to the terminal ports in either M2 or M4. 
+
+Connect the positive end of the power source to the positive terminal on the MotorShield, and the negative end to the negative terminal. If you are using a laboratory DC power supply, turn the power supply on. As the stepper motor is running, turn the current knob and the voltage knob until the current is reading between 0.3 and 0.4 amps and the voltage is reading something near 12 volts. For your information, the stepper motor that we are using, the 17HS16-0284S, is rated for 12-24 volts of electric potential and 0.28 amps of current.
+
+**Step 6:** Control the stepper motor using code!
+
+First, you need to upload the correct Arduino code on the Arduino Uno. To do that, first connect your computer to the Arduino Uno using a Micro-USB adaptor cable. Then, download the code provided on GitHub called syringe_arduino via the user kjiang8 on this webpage: https://github.com/kjiang8/Hackable-Syringe-Pump
+Then, copy the code into the Arduino IDE and hit upload. 
+
+Then, you need to connect to Pithy. First, you need to download Hamachi via Dan’s instructions. Then, you need to log onto a pithy.io portal via Dan’s instructions.
+
+When you have access to Pithy, download the code provided on GitHub called syringe_pithy.py via the user kjiang8 on this webpage:
+https://github.com/kjiang8/Hackable-Syringe-Pump
+Then, copy that code into the pithy page, and hit run.
+
+//If you want to control the syringe pump through Arduino only, download the code provided on GitHub called syringe_arduino_only via the user kjiang8 on this webpage:
+https://github.com/kjiang8/Hackable-Syringe-Pump
+Then, copy the code into the Arduino IDE. Next, determine the direction you want the pump to move (BACKWARD for pushing liquid out; FORWARD for filling the syringe pump up). Then, determine the number of mL of liquid you want to fill the syringe with or push out of the syringe. Then, hit upload and the syringe pump should begin to move in a few moments. 
+
+If you want to fill the syringe pump up, input the correct code. Then, you have to hold the syringe pump vertically with the tip of the syringe continuously submerged in liquid.
+
+If you want to turn off the syringe pump while it is operation or when it is not in operation, simply kill the power supply.
