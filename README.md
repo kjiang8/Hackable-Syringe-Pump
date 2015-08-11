@@ -58,7 +58,7 @@ To run this, you will need:
 
 ###Software Installation
 
-1. Download [nodeforwarder](https://github.com/dansteingart/nodeforwarder). Serialport, express, etc, will be installed in step 4.  
+1. Download [nodeforwarder](https://github.com/dansteingart/nodeforwarder). Serialport, express, etc, will be installed in step 6.  
 2. Download [pithy](https://github.com/dansteingart/pithy) and follow directions. 
 3. Clone this repository.
 4. Run syringe_arduino.ino on the arduino. The serialport should read “Stepper test successful!”
