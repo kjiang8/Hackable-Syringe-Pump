@@ -58,10 +58,10 @@ To run this, you will need:
 
 ###Software Installation
 
-1. Download [nodeforwarder](https://github.com/dansteingart/nodeforwarder). Serialport, express, etc, will be installed in step 6.  
+1. Download [nodeforwarder](https://github.com/dansteingart/nodeforwarder). Do not open a node. Serialport, express, etc, will be installed in step 6.  
 2. Download [pithy](https://github.com/dansteingart/pithy) and follow directions. 
 3. Clone this repository.
-4. Run syringe_arduino.ino on the arduino. The serialport should read “Stepper test successful!”
+4. Run syringe_arduino.ino on the arduino. The serialport should read “Stepper test successful!” If an error occurs saying the port is busy, close any open nodes. 
 6. cd into the nodeforwarder folder. 
 7. Run startnode.bat [windows] or startnode.sh [macs]. Note: this file is in the hackable-syringe-pump folder, not the nodeforwarder folder, so copy it over or type the path in front of the file. If permission is denied, type chmod u+x startnode.sh to give yourself permission to execute the file. 
 8. Open syringe.py using pithy and run the code. 
